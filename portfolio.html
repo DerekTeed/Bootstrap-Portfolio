@@ -4,14 +4,13 @@
 <head>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
     <style>
-        hr {
-            border-width: 3px;
-        }
-
         footer {
             bottom: 0;
             position: fixed;
@@ -19,20 +18,69 @@
             font-size: .7em;
         }
 
+        .nav-link:visited {
+            color: blue;
+        }
+
         img {
-            height: 16rem;
-            width: 16rem;
+            height: 100%;
+            width: 100%;
             content: fluid;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+
+        }
+
+        /* relevant styles */
+        .img__wrap {
+            position: relative;
+            height: 200px;
+            width: 257px;
+        }
+
+        .img__description_layer {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(36, 62, 206, 0.6);
+            color: #fff;
+            visibility: hidden;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* transition effect. not necessary */
+            transition: opacity .2s, visibility .2s;
+        }
+
+        .img__wrap:hover .img__description_layer {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .img__description {
+            transition: .2s;
+            transform: translateY(1em);
+        }
+
+        .img__wrap:hover .img__description {
+            transform: translateY(0);
         }
     </style>
     <title>Portfolio</title>
 </head>
 
-<body class="bg-secondary">
-    <nav class="navbar navbar-dark bg-white">
+<body class="background">
+    <nav class="navbar bg-white">
         <span class="h5 ml-5 bg-dark py-3 px-3 text-white">Derek Teed</span>
 
-        <ul class="nav justify-content-end navbar navbar-dark bg-seconday text-white">
+        <ul class="nav justify-content-end navbar text-white">
             <li class="nav-item">
                 <a class="nav-link" href="index.html">About</a>
             </li>
@@ -42,61 +90,139 @@
             <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.linkedin.com/in/derek-teed-49ba883b/">Linkedin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/DerekTeed/">Github</a>
+            </li>
 
         </ul>
     </nav>
-    <div class="container my-5 ml-5 bg-white col-sm-8"><br><br>
-        <h3 class="col-sm-3 mx-3 ">Portfolios</h3>
-        <div><br>
-            <hr class="col-sm-10"><br>
-        </div>
-
+    <div class="container col-sm-12">
         <div class="row">
-            <div class="col-sm-6 card" style="width: 16rem;">
-                <img src="images/exercise.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Exercise</p>
+            <div class="container col-sm-2">
+            </div>
+
+            <div class="container col-sm-8"><br><br>
+                <h3 class="col-sm-3 mx-3 ">Portfolio</h3>
+                <div><br>
+                    <hr class="col-sm-10"><br>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 card img__wrap" style="width: 100%;">
+                        <img src="images/Giphy2.png" class="card-img-top img__img" alt="...">
+
+                        <a href="https://derekteed.github.io/Giphy1/" class="button view overlay">
+                            <div class="card-body1 img__description_layer giphy-click">
+                                <p class="card-text text-center img__description">View Giphy Work!</p>
+                        </a>
+                        <p>&nbsp &nbsp &nbsp</p>
+                        <a href="https://github.com/DerekTeed/Giphy1" class="button">
+                            <p class="card-text img__description">View Repository!</p>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-6 card img__wrap" style="width: 100%;">
+                    <img src="images/crystal5.png" class="card-img-top img__img " alt="...">
+
+                    <div class="card-body2 img__description_layer crystal-click">
+                        <a href="https://derekteed.github.io/unit-4-game/index.html" class="button">
+                            <p class="card-text  img__description">View Crystals!</p>
+                        </a>
+                        <p>&nbsp &nbsp &nbsp</p>
+                        <a href="https://github.com/DerekTeed/DerekTeed.github.io/tree/master/unit-4-game"
+                            class="button">
+                            <p class="card-text img__description">View Repository!</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 card img__wrap mb-5" style="width: 100%;">
+                    <img src="images/MusicSearchApi.png" class="card-img-top img__img" alt="...">
+
+                    <a href="https://derekteed.github.io/Project1-Music-Search/" class="button">
+                        <div class="card-body3 img__description_layer music-click">
+                            <p class="card-text text-center img__description">View Music Search</p>
+                    </a>
+                    <p>&nbsp &nbsp &nbsp</p>
+                    <a href="https://github.com/DerekTeed/Project1-Music-Search" class="button">
+                        <p class="card-text img__description">View Repository!</p>
+                    </a>
                 </div>
             </div>
 
-            <div class="col-sm-6 card" style="width: 16rem;">
-                <img src="images/sleep.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Sleep</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 card" style="width: 16rem;">
-                <img src="images/investing.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Investing</p>
-                </div>
-            </div>
+            <div class="col-sm-6 card img__wrap mb-5" style="width: 100%;">
+                <img src="images/TrainSchedule.png" class="card-img-top img__img" alt="...">
 
-            <div class="col-sm-6 card" style="width: 16rem;">
-                <img src="images/audible.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Audible</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 card" style="width: 16rem;">
-                <img src="images/computer.jpeg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text text-center">Computer</p>
-                </div>
-            </div>
-
-            <div class="col-sm-6 card">
-
+                <a href="https://derekteed.github.io/trainTime/" class="button">
+                    <div class="card-body4 img__description_layer train-click">
+                        <p class="card-text text-center img__description">View Train Schedule!</p>
+                </a>
+                <p>&nbsp &nbsp &nbsp</p>
+                <a href="https://github.com/DerekTeed/trainTime" class="button">
+                    <p class="card-text align-text-bottom img__description">View Repository!</p>
+                </a>
             </div>
         </div>
     </div>
-    <footer class="page-footer bg-dark font-small blue">
+
+
+
+    </div>
+
+    <div class="container col-sm-2"></div>
+
+    </div>
+
+
+    </div>
+    <footer class="page-footer bg-dark font-small blue mt-5">
         <div class="footer-copyright text-center py-3 text-white">© 2019 Copyright
         </div>
     </footer>
+
+
+    <script>
+        //Can I make this easy to do for all 4?
+        $(document).ready(function () {
+            $(".crystal-click").hover(function () {
+                $(".background").addClass("bg-secondary"),
+                    $(".crystal-click").mouseleave(function () {
+                        $(".background").toggleClass("bg-secondary");
+                    })
+
+            })
+            $(".giphy-click").hover(function () {
+                $(".background").addClass("bg-primary"),
+                    $(".giphy-click").mouseleave(function () {
+                        $(".background").toggleClass("bg-primary");
+                    })
+
+            })
+            $(".music-click").hover(function () {
+                $(".background").addClass("bg-danger"),
+                    $(".music-click").mouseleave(function () {
+                        $(".background").toggleClass("bg-danger");
+                    })
+
+            })
+            $(".train-click").hover(function () {
+                $(".background").addClass("bg-info"),
+                    $(".train-click").mouseleave(function () {
+                        $(".background").toggleClass("bg-info");
+                    })
+
+            })
+        });
+
+    </script>
+
 
 </body>
